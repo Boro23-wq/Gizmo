@@ -19,8 +19,12 @@ const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
+
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
@@ -105,16 +109,18 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 )}
 
-                <ListGroup.Item>
-                  <Button
-                    onClick={addToCartHandler}
-                    className='btn-block'
-                    type='button'
-                    disabled={product.countInStock === 0}
-                  >
-                    Add To Cart
-                  </Button>
-                </ListGroup.Item>
+                {!userInfo.isAdmin && (
+                  <ListGroup.Item>
+                    <Button
+                      onClick={addToCartHandler}
+                      className='btn-block'
+                      type='button'
+                      disabled={product.countInStock === 0}
+                    >
+                      Add To Cart
+                    </Button>
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Card>
           </Col>

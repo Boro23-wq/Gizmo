@@ -47,7 +47,6 @@ export const cartReducer = (
         ...state,
         paymentMethod: action.payload,
       };
-
     default:
       return state;
   }

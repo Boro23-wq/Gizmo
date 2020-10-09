@@ -33,6 +33,9 @@ const LoginScreen = ({ history, location }) => {
   return (
     <FormContainer>
       <h1>Sign In</h1>
+      <Message variant='warning'>
+        If your are an admin, sign in with your admin credentials!
+      </Message>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
