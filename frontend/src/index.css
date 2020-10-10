@@ -19,3 +19,63 @@ h2 {
 .rating span {
   margin: 0.1rem;
 }
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+/* .carousel-inner {
+  background-image: url('https://coverfiles.alphacoders.com/808/80845.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.carousel img {
+  height: 300px;
+  width: 320px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+}
+.carousel a {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .carousel {
+    margin-bottom: 1.2em;
+  }
+
+  .carousel img {
+    padding: 45px;
+    margin: 15px 0px;
+    border-radius: 50%;
+  }
+
+  .carousel-caption h2 {
+    font-size: 0.7em;
+  }
+  .navbar-collapse button {
+    margin-top: 0.5em;
+  }
+  .container h1 {
+    font-size: 1.2em;
+  }
+  .col-md-6 {
+    margin-top: 1.5em;
+  }
+  .col-md-9 {
+    margin-top: 1.5em;
+  }
+}

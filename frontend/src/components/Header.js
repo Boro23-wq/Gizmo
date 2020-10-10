@@ -12,7 +12,6 @@ const Header = ({ history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-  console.log(userInfo);
 
   const logoutHandler = () => {
     dispatch(logout(history));
